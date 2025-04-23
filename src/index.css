@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --peach-color: #FFDAB9;
+  --peach-light: #FFE5D4;
+  --peach-lightest: #FFF0E5;
+  --peach-medium: #FFCC99;
+  --peach-dark: #FFBD80;
+  --gold: #FFD700;
+}
+
+html, body {
+  @apply bg-peach-lightest;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: url('/cursor.png'), auto;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', serif;
+}
+
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.parallax {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.petal {
+  pointer-events: none;
+  position: absolute;
+  background-image: url('/petal.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  z-index: 10;
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--gold);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--peach-dark) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gallery-image {
+  @apply rounded-lg shadow-lg transition-all duration-500;
+}
+
+.gallery-image:hover {
+  @apply shadow-xl transform scale-[1.02] z-10;
+}
+
+.content-section {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+}
