@@ -10,7 +10,7 @@ const AudioController: React.FC<AudioControllerProps> = ({ muted }) => {
 
   useEffect(() => {
     // Birthday music URL - replace with an actual royalty-free birthday music
-    const musicUrl = '/public/music.mp3';
+    const musicUrl = '/music.mp3';
     
     soundRef.current = new Howl({
       src: [musicUrl],
