@@ -30,7 +30,7 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 0.8, delay: 1, type: "spring" }}
         >
           <img
-            src="public/HeroImg.png"
+            src="public/HeroImg.jpg"
             alt="Birthday celebration"
             className="w-full h-full object-cover"
           />
